@@ -20,6 +20,7 @@
             border: 1px solid #000;
             text-align: center;
             padding: 2cm 4cm;
+            background: radial-gradient(circle, #ffffff, #dddab0);
         }
 
         h1
@@ -65,22 +66,22 @@
     <h2>Speedwriting</h2>
 
     <p class="slogan">This certificate is proudly presented to</p>
-    <p class="name">Max Mustermann</p>
+    <p class="name">{{ name }}</p>
 
     <p class="description">
-        For successfully completing the Speedwriting exam on <span>24th December 2025</span>
+        For successfully completing the Speedwriting exam on <span>{{ exam_date }}</span>
     </p>
-    <p>Difficulty: Medium</p>
-    <p>Words per minute: 75</p>
-    <p>Accuracy: 92%</p>
+    <p>Difficulty: {{ difficulty }}</p>
+    <p>Words per minute: {{ wpm }}</p>
+    <p>Accuracy: {{ accuracy }}</p>
 
     <div class="singing">
-        <img src="./app/certificate/signature.png" alt="Signature" style="width: 10cm; margin-top: 3rem;">
+        <img src="./signature.png" alt="Signature" style="width: 10cm; margin-top: 3rem;">
     </div>
 
     <div class="digital-check-hash" style="font-size: 0.8rem; font-family: monospace; margin-top: 2rem;">
-        <p>Check-Hash: <span>3f5e8c9d2a1b4e6f7g8h9i0jklmnopqrstuvwx</span></p>
-        <p>Certification-ID: <span>3844</span></p>
+        <p>Check-Hash: <span>{{ check_hash }}</span></p>
+        <p>Certification-ID: <span>{{ certification_id }}</span></p>
     </div>
 </body>
 </html>

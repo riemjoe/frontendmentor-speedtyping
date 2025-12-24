@@ -1,0 +1,17 @@
+{
+    "name": "jonasriemer/speedwriting",
+    "autoload": {
+        "psr-4": {
+            "Speedwriting\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jonas Riemer",
+            "email": "riemer.jonas@outlook.de"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    }
+}
