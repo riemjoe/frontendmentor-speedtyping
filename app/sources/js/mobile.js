@@ -1,17 +1,20 @@
 
-onResize();
+document.addEventListener('DOMContentLoaded', onResize);
 window.addEventListener('resize', onResize);
 
 function onResize()
 {
-    if (window.innerWidth > 768)
+    if (window.innerWidth <= 768) 
+    {
+        adjustLayoutForMobile();
+    
+    }
+    else
     {
         adjustLayoutForDesktop();
     }
-    {
-        adjustLayoutForMobile();
-    }
 }
+
 
 function adjustLayoutForMobile() 
 {

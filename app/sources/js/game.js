@@ -54,11 +54,9 @@ async function init() {
         btnRestart.addEventListener('click', resetGame);
         btnGoAgain.addEventListener('click', resetGame);
         
-        // Difficulty Handlers
         difficultyButtons.forEach(btn => btn.addEventListener('click', changeDifficulty));
         difficultySelect.addEventListener('change', changeDifficulty);
 
-        // Mode Handlers
         modeButtons.forEach(btn => btn.addEventListener('click', changeMode));
         modeSelect.addEventListener('change', changeMode);
 
@@ -69,9 +67,6 @@ async function init() {
     }
 }
 
-/**
- * Hilfsfunktion um das aktive Element in UI zu synchronisieren
- */
 function syncSettingsUI(name, value) {
     if (name === "option_difficulty") {
         difficultyButtons.forEach(b => {
@@ -108,7 +103,6 @@ function startGame() {
     timeElapsed = 0;
     startTime = null;
 
-    // Ermittle Schwierigkeit (entweder vom aktiven Button oder Select)
     const activeDiff = difficultySelect.value;
     const texts = gameData[activeDiff];
     currentText = texts[Math.floor(Math.random() * texts.length)].text;
