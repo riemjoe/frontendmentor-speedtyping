@@ -15,12 +15,9 @@
         body
         {
             font-family: Arial, sans-serif;
-            width: 29.7cm;
-            height: 21cm;
-            border: 1px solid #000;
             text-align: center;
-            padding: 2cm 4cm;
             background: radial-gradient(circle, #ffffff, #dddab0);
+            padding: 2cm 4cm;
         }
 
         h1
@@ -73,10 +70,10 @@
     </p>
     <p>Difficulty: {{ difficulty }}</p>
     <p>Words per minute: {{ wpm }}</p>
-    <p>Accuracy: {{ accuracy }}</p>
+    <p>Accuracy: {{ accuracy }}%</p>
 
     <div class="singing">
-        <img src="./signature.png" alt="Signature" style="width: 10cm; margin-top: 3rem;">
+        <img src="data:image/png;base64,{{ signature_img_base64 }}" alt="Signature" style="width: 10cm; margin-top: 3rem;">
     </div>
 
     <div class="digital-check-hash" style="font-size: 0.8rem; font-family: monospace; margin-top: 2rem;">

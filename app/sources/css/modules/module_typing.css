@@ -198,6 +198,13 @@
                 color: var(--color-ui-white);
             }
 
+    .winning_screen .buttons
+    {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
     .winning_screen button
     {
         padding: 1rem 2rem;

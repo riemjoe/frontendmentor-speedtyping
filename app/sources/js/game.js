@@ -37,6 +37,7 @@ const finalWrong = document.getElementById('final_characters_wrong');
 const btnStart = document.getElementById('button_start_test');
 const btnRestart = document.getElementById('button_restart');
 const btnGoAgain = document.getElementById('button_go_again');
+const btnGenerateCertificate = document.getElementById('button_generate_certificate');
 
 const difficultyButtons = document.querySelectorAll('button[name="option_difficulty"]');
 const difficultySelect = document.getElementById('option_difficulty');
@@ -224,6 +225,16 @@ function endGame() {
     } else {
         labelWinningScreen.innerText = "Solid run! Keep pushing to beat your high score.";
     }
+
+    btnGenerateCertificate.onclick = function() {
+        const name = prompt("Please enter your name for the certificate:");
+        if (name && name.trim() !== "") {
+            const difficulty = difficultySelect.value;
+            const wpm = labelWpm.innerText;
+            const accuracy = labelAccuracy.innerText.replace('%', '');
+            redirectToCertificate(name.trim(), difficulty, wpm, accuracy);
+        }
+    };
 }
 
 function resetGame() {
