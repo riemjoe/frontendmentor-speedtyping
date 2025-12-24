@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
+
+:root
+{
+    --color-ui-dark-dark: #121212;
+    --color-ui-dark-light: #262626;
+
+    --color-ui-gray-dark: #717178;
+    --color-ui-gray-light: #949497;
+
+    --color-ui-white: #FFFFFF;
+
+    --color-ui-red: #D64D5B;
+    --color-ui-green: #4DD67B;
+    --color-ui-yellow: #F4DC73;
+
+    --color-ui-blue-dark: #177DFF;
+    --color-ui-blue-light: #4CA6FF;
+
+    --font-family-primary: 'Stack Sans Text', sans-serif;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body
+{
+    height: 100%;
+    font-family: var(--font-family-primary);
+    background-color: var(--color-ui-dark-dark);
+    color: var(--color-ui-white);
+}
+
+.text_yellow
+{
+    color: var(--color-ui-yellow);
+}
+
+.text_red
+{
+    color: var(--color-ui-red) !important;
+}
+
+.text_green
+{
+    color: var(--color-ui-green) !important;
+}

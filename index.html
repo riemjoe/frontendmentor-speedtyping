@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedwriting | Webdesign Riemer</title>
+    <link rel="stylesheet" href="./app/sources/css/stylesheet_index.css">
+</head>
+<body>
+    <header>
+        <a href="#"><img src="./app/resources/branding/logo-large.svg" alt="Typing Speed Test" id="logo"></a>
+        <div class="score">
+            <img src="./app/resources/icons/ic_personal_best.svg" alt="Icon Personal Best" class="icon">
+            <p>Personal best: <span id="label_personal_record">0 WPM</span></p>
+        </div>
+    </header>
+    <main>
+        <section class="toolbar" id="toolbar">
+            <div class="info">
+                <p>WPM: <span id="label_current_wpm">0</span></p>
+                <p>Accuracy: <span id="label_current_accuracy">0%</span></p>
+                <p>Time: <span id="label_current_time" class="text_yellow">0:00</span></p>
+            </div>
+            <div class="settings">
+                <div class="setting">
+                    <label for="option_difficulty" class="desktop_only">Difficulty: </label>
+                    <button name="option_difficulty" data-difficulty="easy" class="desktop_only">Easy</button>
+                    <button name="option_difficulty" data-difficulty="medium" class="desktop_only">Medium</button>
+                    <button name="option_difficulty" data-difficulty="hard" class="desktop_only active">Hard</button>
+                    <select name="option_difficulty" id="option_difficulty" class="mobile_only">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard" selected>Hard</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <label for="option_mode" class="desktop_only">Mode:</label>
+                    <button name="option_mode" data-mode="time" class="desktop_only active">Timed (60s)</button>
+                    <button name="option_mode" data-mode="passage" class="desktop_only">Passage</button>
+                    <select name="option_mode" id="option_mode" class="mobile_only">
+                        <option value="time" selected>Timed (60s)</option>
+                        <option value="passage">Passage</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="typing-preview">
+                <div class="starting-screen" id="starting_screen">
+                    <button id="button_start_test">Start Test</button>
+                    <p>Or click the text and start typing</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="winning_screen">
+            <img src="./app/resources/icons/ic_completed.svg" alt="Completed icon" class="icon">
+            <h2>Test Complete!</h2>
+            <h3 id="label_winning_screen">Solid run! Keep pushing to beat your high score.</h3>
+            <div class="states">
+                <div class="state">
+                    <p>WPM</p>
+                    <span id="final_wpm">0</span>
+                </div>
+                <div class="state">
+                    <p>Accuracy</p>
+                    <span id="final_accuracy">0%</span>
+                </div>
+                <div class="state">
+                    <p>Characters</p>
+                    <p>
+                        <span id="final_characters_correct" class="text_green">0</span><span>/</span><span id="final_characters_wrong" class="text_red">0</span>
+                    </p>
+                </div>
+            </div>
+            <button id="button_go_again">Go again <img src="./app/resources/icons/ic_restart.svg" alt="Restart Icon" class="invert"></button>
+        </section>
+
+        <div class="controlls hidden" id="controlls_section">
+            <button id="button_restart">Restart test <img src="./app/resources/icons/ic_restart.svg" alt="Restart Icon"></button>
+        </div>
+    </main>
+
+    <script src="./app/sources/js/mobile.js"></script>
+    <script src="./app/sources/js/game.js"></script>
+</body>
+</html>

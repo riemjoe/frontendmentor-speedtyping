@@ -1,0 +1,37 @@
+header
+{
+    padding: 2rem 5%;   
+    background-color: var(--color-header-background);
+    color: var(--color-header-text);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    header .score
+    {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+        header .score p
+        {
+            color: #9b9b9b;
+        }
+
+            header .score p span
+            {
+                color: var(--color-header-text);
+                color: #fff;
+            }
+
+
+        header .score .icon
+        {
+            width: 24px;
+            height: 24px;
+    }

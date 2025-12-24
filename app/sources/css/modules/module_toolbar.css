@@ -1,0 +1,112 @@
+.toolbar
+{
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-ui-gray-dark);
+    margin: 0 5%;
+
+    @media (max-width: 600px)
+    {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+    .toolbar .info,
+    .toolbar .settings
+    {
+        display: flex;
+    }
+
+        .toolbar .info p
+        {
+            padding: 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+            border-left: 1px solid var(--color-ui-gray-dark);
+        }
+
+        .toolbar .info p:first-child,
+        .toolbar .settings .setting:first-child
+        {
+            border-left: none;
+        }
+
+            .toolbar .info p span
+            {
+                font-weight: 600;
+                font-size: 1.3rem;
+            }
+
+
+    .toolbar .settings .setting
+    {
+        border-left: 1px solid var(--color-ui-gray-dark);
+        padding: 0 1rem;
+
+        @media (max-width: 600px)
+        {
+            border-left: none;
+            flex: 1;
+        }
+    }
+
+        .toolbar .setting select
+        {
+            background: none;
+            border: 1px solid var(--color-ui-gray-light);
+            color: var(--color-ui-white);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.25rem 1rem;
+            margin-left: 0.25rem;
+            border-radius: 0.25rem;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+
+            .toolbar .setting select option,
+            .toolbar .setting select option:hover,
+            .toolbar .setting select option:focus
+            {
+                color: #000 !important;
+            }
+
+        .toolbar .settings button
+        {
+            background: none;
+            border: 1px solid var(--color-ui-gray-light);
+            color: var(--color-ui-white);
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.25rem 1rem;
+            margin-left: 0.25rem;
+            border-radius: 0.25rem;
+        }
+
+            .toolbar .settings button:hover,
+            .toolbar .settings button:focus,
+            .toolbar .settings button.active
+            {
+                border-color: var(--color-ui-blue-light);
+                color: var(--color-ui-blue-light);
+            }
+
+.mobile_only
+{
+    @media (min-width: 601px)
+    {
+        display: none;
+    }
+}
+
+.desktop_only
+{
+    @media (max-width: 600px)
+    {
+        display: none;
+    }
+}
