@@ -226,7 +226,22 @@ function endGame() {
         labelWinningScreen.innerText = "Solid run! Keep pushing to beat your high score.";
     }
 
-    btnGenerateCertificate.classList.remove('hidden');
+    // Total characters available
+    let totalChars = currentText.length;
+    let typedChars = charIndex;
+    let correctChars = typedChars - mistakes;
+
+    if ((totalChars / 1.5) < correctChars)
+    {
+        btnGenerateCertificate.classList.remove('hidden');
+        labelWinningScreen.innerText = "Solid run! Keep pushing to beat your high score. You qualified for a certificate!";
+    }
+    else
+    {
+        btnGenerateCertificate.classList.add('hidden');
+        labelWinningScreen.innerText = "Solid run! Keep pushing to beat your high score. Practice more to qualify for a certificate.";
+    }
+    
     btnGenerateCertificate.onclick = function() {
         const name = prompt("Please enter your name for the certificate:");
         if (name && name.trim() !== "") {

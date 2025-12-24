@@ -19,6 +19,16 @@ if (empty($name) || empty($difficulty) || empty($wpm) || empty($accuracy)) {
     exit;
 }
 
+if($difficulty === 'easy') {
+    $difficulty = 'Beginners';
+} elseif($difficulty === 'medium') {
+    $difficulty = 'Experienced';
+} elseif($difficulty === 'hard') {
+    $difficulty = 'Professional';
+} else {
+    $difficulty = 'Unknown';
+}
+
 // Signature image as base64
 $signature_path = __DIR__ . '/../../certificate/signature.png';
 $signature_data = file_get_contents($signature_path);
