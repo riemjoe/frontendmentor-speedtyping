@@ -226,13 +226,15 @@ function endGame() {
         labelWinningScreen.innerText = "Solid run! Keep pushing to beat your high score.";
     }
 
+    btnGenerateCertificate.classList.remove('hidden');
     btnGenerateCertificate.onclick = function() {
         const name = prompt("Please enter your name for the certificate:");
         if (name && name.trim() !== "") {
             const difficulty = difficultySelect.value;
             const wpm = labelWpm.innerText;
             const accuracy = labelAccuracy.innerText.replace('%', '');
-            redirectToCertificate(name.trim(), difficulty, wpm, accuracy);
+            redirectToCertificate(name.trim(), difficulty, wpm, accuracy, charIndex - mistakes, timeElapsed);
+            btnGenerateCertificate.classList.add('hidden');
         }
     };
 }

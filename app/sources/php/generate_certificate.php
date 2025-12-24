@@ -10,9 +10,10 @@ $name = $_GET['name'] ?? '';
 $difficulty = $_GET['difficulty'] ?? '';
 $wpm = $_GET['wpm'] ?? '';
 $accuracy = $_GET['accuracy'] ?? '';
-$exam_date = $_GET['exam_date'] ?? '';
+$chars_typed = $_GET['chars_typed'] ?? '';
+$duration = $_GET['duration'] ?? '';
 
-if (empty($name) || empty($difficulty) || empty($wpm) || empty($accuracy) || empty($exam_date)) {
+if (empty($name) || empty($difficulty) || empty($wpm) || empty($accuracy)) {
     http_response_code(400);
     echo json_encode(['error' => 'Missing required fields.']);
     exit;
@@ -22,6 +23,9 @@ if (empty($name) || empty($difficulty) || empty($wpm) || empty($accuracy) || emp
 $signature_path = __DIR__ . '/../../certificate/signature.png';
 $signature_data = file_get_contents($signature_path);
 $signature_img_base64 = base64_encode($signature_data);
+
+// Format 01 MONTH 2025, 16:00:00
+$exam_date = date('d F Y, H:i:s');
 
 // PDF generation
 $options = new Options();
@@ -35,6 +39,8 @@ $html = str_replace('{{ difficulty }}', $difficulty, $html);
 $html = str_replace('{{ wpm }}', $wpm, $html);
 $html = str_replace('{{ accuracy }}', $accuracy, $html);
 $html = str_replace('{{ exam_date }}', $exam_date, $html);
+$html = str_replace('{{ chars_typed }}', $chars_typed, $html);
+$html = str_replace('{{ duration }}', $duration, $html);
 $html = str_replace('{{ signature_img_base64 }}', $signature_img_base64, $html);
 $certification_id = uniqid('CERT-');
 $html = str_replace('{{ certification_id }}', $certification_id, $html);
